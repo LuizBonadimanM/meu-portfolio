@@ -89,3 +89,12 @@
     width: 3em;
     height: 2.5em;
 }
+
+
+
+@media screen and (max-width: 1028px) {  
+    .projects_banners {
+        flex-direction: column;
+    }
+
+}
