@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Portfolio</title>
+    <link rel="icon" href="img/Logo-img-title.png" />
+  </head>
+  
+  <body>
+    <header>
+      <nav class="header">
+        <a href="#home" class="header_logo">
+          <img class="header_logo_img" src="img/Logo-img.png" alt="Logo" />
+        </a>
+
+        <div class="header_nav">
+          <ul>
+            <li><a href="#about">Sobre mim</a></li>
+            <li><a href="#tec">Tecnologias</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <a href="#" class="header_button"
+          >Curriculo<i class="fa-solid fa-download"></i
+        ></a>
+
+        <div class="header_mobile_menu_icon">
+          <button type="button" onclick="menuShow()">
+            <img class="icon" src="img/menu_white_36dp.svg" alt="Menu" />
+          </button>
+        </div>
+      </nav>
+
+      <div class="mobile_menu">
+        <ul class="mobile_menu_nav">
+          <li><a href="#about">Sobre mim</a></li>
+          <li><a href="#tec">Tecnologias</a></li>
+          <li><a href="#projects">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+
+        <a href="#" class="mobile_menu_button"
+          >Curriculo<i class="fa-solid fa-download"></i
+        ></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <img class="hero_img" src="img/user-img.png" alt="#" />
+
+        <div class="hero_banner">
+          <p class="p1">Olá, eu sou</p>
+          <h1>Luiz Bonadiman</h1>
+          <p class="p2">
+            <span class="hero_span">Desenvolvedor Front-End</span> focado em
+            criar interfaces modernas, responsivas e intuitivas.
+          </p>
+          <p class="p2">
+            Atualmente estudando e aprimorando minhas habilidades com
+            <span class="hero_span">HTML, CSS e JavaScript,</span> buscando
+            sempre desenvolver experiências limpas, funcionais e agradáveis para
+            o usuário.
+          </p>
+        </div>
+      </section>
+
+      <section class="about-me" id="about">
+        <img src="img/personal-foto.png" alt="" />
+        <div class="about-me_banner">
+          <h2 class="h2">Sobre <span class="spanh2">Mim</span></h2>
+          <p class="p2">
+            Sou estudante e desenvolvedor em formação, apaixonado por tecnologia
+            e pela criação de soluções digitais. Tenho dedicado meu tempo ao
+            aprendizado de desenvolvimento web, buscando aprimorar
+            constantemente minhas habilidades técnicas e práticas.
+          </p>
+          <p class="p2">
+            Atualmente estudo HTML, CSS, JavaScript e conceitos de
+            desenvolvimento de software, criando projetos próprios para colocar
+            em prática os conhecimentos adquiridos e desenvolver experiências
+            modernas e funcionais para os usuários.
+          </p>
+          <p class="p2">
+            Valorizo a organização, a atenção aos detalhes e o aprendizado
+            contínuo. Acredito que cada projeto é uma oportunidade de evoluir
+            tecnicamente e entregar resultados cada vez melhores.
+          </p>
+          <p class="p2">
+            Meu objetivo é construir uma carreira sólida na área de tecnologia,
+            participando de projetos desafiadores e contribuindo com soluções
+            criativas e eficientes para empresas e pessoas.
+          </p>
+        </div>
+      </section>
+
+      <section class="skills" id="tec">
+        <h2 class="h2">Minhas <span class="spanh2">Tecnologias</span></h2>
+        <div class="skills_banners">
+          <div class="skills_banners_tec">
+            <img src="img/icons8-html-5-100.svg" alt="icone_html" />
+            <p class="p2">HTML</p>
+          </div>
+          <div class="skills_banners_tec">
+            <img src="img/icons8-css-100.svg" alt="icone_css" />
+            <p class="p2">CSS</p>
+          </div>
+          <div class="skills_banners_tec">
+            <img src="img/icons8-javascript-100.svg" alt="icone_javascript" />
+            <p class="p2">Javascript</p>
+          </div>
+          <div class="skills_banners_tec">
+            <img src="img/icons8-git.svg" alt="icone_git" />
+            <p class="p2">Git</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects" id="projects">
+        <h2 class="h2">Meus <span class="spanh2">Projetos</span></h2>
+
+        <div class="projects_banners">
+          <div class="projects_banners_img_left">
+            <img class="projects_banners_img" src="img/tohatsu.png" alt="" />
+          </div>
+          <div class="projects_banner_element projects_banner_element_left">
+            <h3 class="h3">Tohatsu Motores / Kamell</h3>
+            <p class="p2">
+              Site institucional desenvolvido para apresentar a marca, seus
+              produtos e soluções de forma clara e organizada. O projeto conta
+              com catálogo de produtos, área de contato, informações
+              institucionais e uma ferramenta para localizar revendedores
+              próximos, proporcionando uma navegação intuitiva e uma experiência
+              responsiva em diferentes dispositivos.
+            </p>
+            <a href="https://tohatsu.kamell.com.br/index.html" target="_blank">
+              <img
+                src="img/external-link-48.svg"
+                alt=""
+                class="read_more_icon"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="projects_banners">
+          <div class="projects_banner_element projects_banner_element_right">
+            <h3 class="h3">Kamell Off-Grid</h3>
+            <p class="p2">
+              Site institucional desenvolvido para apresentar a marca, seus
+              produtos e soluções de forma clara e organizada. O projeto conta
+              com catálogo de produtos, área de contato, informações
+              institucionais e uma ferramenta para localizar revendedores
+              próximos, proporcionando uma navegação intuitiva e uma experiência
+              responsiva em diferentes dispositivos.
+            </p>
+            <a href="https://offgrid.kamell.com.br/" target="_blank">
+              <img
+                src="img/external-link-48.svg"
+                alt=""
+                class="read_more_icon"
+              />
+            </a>
+          </div>
+          <div class="projects_banners_img_right">
+            <img
+              class="projects_banners_img"
+              src="img/kamell-offgrid.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contato">
+        <form method="post" class="contact_form" id="contact-form">
+          <div class="input-box">
+            <input
+              type="text"
+              name="user_name"
+              id="name"
+              placeholder=""
+              required
+            />
+            <label for="name">Seu nome</label>
+          </div>
+
+          <div class="input-box">
+            <input
+              type="email"
+              name="user_email"
+              id="Email"
+              placeholder=""
+              required
+            />
+            <label for="email">Email</label>
+          </div>
+
+          <div class="input-box">
+            <input type="text" name="subject" id="subject" placeholder="" />
+            <label for="subject">Assunto</label>
+          </div>
+
+          <div class="input-box">
+            <textarea name="message" placeholder="" required></textarea>
+            <label for="message">Como posso te ajudar?</label>
+          </div>
+
+          <button type="submit">Entre em contato</button>
+        </form>
+
+        <div class="contact_lets_talk">
+          <h2 class="h2"><b>Vamos conversar!</b></h2>
+          <p class="p2">
+            Estou construindo minha trajetória como
+            <span class="hero_span">Desenvolvedor Front-End</span> e sempre
+            aberto a novas oportunidades, projetos e conexões na área de
+            tecnologia.
+          </p>
+          <p class="p2">
+            Se você tem uma ideia, uma proposta ou simplesmente deseja trocar
+            experiências, ficarei feliz em receber sua mensagem.
+          </p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer_info">
+          <p class="p2">Luiz Bonadiman</p>
+          <p class="p3">Desenvolvedor Front-End</p>
+        </div>
+
+        <div class="footer_copyright">
+          <p class="p3">© 2026 Luiz Bonadiman.</p>
+          <p class="p3">Todos os direitos reservados.</p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

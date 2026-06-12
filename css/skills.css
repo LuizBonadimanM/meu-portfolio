@@ -1,0 +1,65 @@
+.skills {
+    height: calc(100vh - 10em);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--padding);
+    gap: 15rem;
+    margin-top: 8rem;
+}
+
+.skills_banners {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.skills_banners_tec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(2rem, 3vw, 3.7rem) 
+            clamp(4rem, 4.8vw, 6.5rem);
+    gap: 3.2rem;
+    border: 3.5px solid black;
+
+    opacity: 0;
+    transform: translateY(50%);
+    transition: 2s ease;
+    transition-delay: 0.1s;
+}
+
+.skills_banners_tec.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skills_banners_tec img {
+    width: clamp(4rem, 8vw, 8rem);
+    height: auto;
+    flex-shrink: 0;
+}
+
+
+
+@media screen and (max-width: 1028px) { 
+    .skills {
+        height: auto;
+        gap: 10rem;
+        margin-bottom: 10rem;
+    }
+   
+    .skills_banners {
+        width: 100%;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .skills_banners_tec {
+        width: calc(50% - 1rem);
+        padding: 2rem 3rem;
+    }
+    
+
+}

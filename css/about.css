@@ -1,0 +1,51 @@
+.about-me {
+    width: 100%;
+    min-height: calc(100vh - 10em);
+    display: flex;
+    padding: var(--padding);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    gap: 8rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-me img {
+    width: clamp(25rem, 35vw, 53rem);
+    height: auto;
+    flex-shrink: 0;
+}
+
+.about-me_banner {
+    max-width: 61rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    letter-spacing: 1px;
+}
+
+.about-me_banner h2{
+    margin-bottom: .5em;
+}
+
+.about-me_banner p {
+    color: var(--primary-neutral);
+    opacity: 0;
+    transform: translateX(50%);
+    transition: 2s ease;
+    transition-delay: 0.1s;
+} 
+
+.about-me_banner p.show {
+    opacity: 1;
+    transform: translateX(0);
+} 
+
+
+@media screen and (max-width: 1028px) { 
+    .about-me {
+        flex-direction: column;
+    }
+
+
+}

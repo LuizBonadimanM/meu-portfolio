@@ -1,0 +1,160 @@
+.header{
+    width: 100%;
+    height: 10em;
+    display: flex;
+    padding: var(--padding);
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+}
+
+
+.header_logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header_logo_img {
+    width: 8em; 
+    height: auto;
+}
+
+.header_nav ul{
+    display: flex;
+    gap: 1em;  
+    list-style: none;
+}
+
+.header_nav li {
+    display: flex;
+}
+
+.header_nav li a {
+    color: black;
+    font-size: 1.8rem;
+    line-height: 24px;
+    font-weight: 600;
+    padding: 1.8rem 2.16rem 1.8rem 2.52rem;
+    border: 2px solid #fff;
+    border-radius: 4px;
+
+    &:hover{
+        border: 2px solid black;
+    } 
+}
+
+.header_nav li a.active {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+}
+
+.header_button{
+    background-color: black;
+    color: white;
+    padding: 1.8rem 2.16rem 1.8rem 2.52rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 4px;
+    display: flex;
+    gap: .5em;
+    border: 2px solid black;
+    
+
+    &:hover{
+        background-color: var(--primary-neutral);
+    }
+
+    &:active{
+        background-color: #fff;
+        color: black;
+    }
+}
+
+.header_mobile_menu_icon {
+    display: none;
+}
+
+
+.mobile_menu {
+    display: none;
+    text-align: center;
+    flex-direction: column;
+    position: fixed;
+    top: 10rem;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 9999;
+    padding: 2rem;
+}
+
+.mobile_menu.open {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.mobile_menu_button {
+    color: white;
+    font-size: 1.6rem;
+    padding: 2rem 0;
+    background-color: black;
+}
+
+
+
+.mobile_menu_nav li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    font-size: 1.6rem;
+    padding: 3rem 0;
+    position: relative;
+}
+
+/* .mobile_menu_nav li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: #000;
+}  */
+
+
+
+
+@media screen and (max-width: 1028px) {  
+    :root {
+        --padding: 0 3em;
+    }
+
+    .header_nav {
+        display: none;
+    }
+
+    .header_button{
+        display: none;
+    }
+
+    .header_mobile_menu_icon {
+        display: block;
+    }
+
+    .header_mobile_menu_icon button {
+        background-color: transparent;
+        filter: brightness(0);
+        border: none;
+        cursor: pointer;
+    }
+    
+}
