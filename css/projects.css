@@ -79,9 +79,18 @@
   width: 100%;
 }
 
+.read_more {
+  display: inline-flex;
+  align-items: center;
+  color: black;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
 .read_more_icon {
-  width: 3em;
-  height: 2.5em;
+  width: 2em;
+  height: 1.5em;
+  align-items: center;
 }
 
 @media screen and (max-width: 1028px) {
