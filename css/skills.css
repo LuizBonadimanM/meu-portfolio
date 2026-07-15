@@ -1,65 +1,103 @@
+/* =========================================================
+   TECNOLOGIAS
+   ========================================================= */
+
 .skills {
-    height: calc(100vh - 10em);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--padding);
-    gap: 15rem;
-    margin-top: 8rem;
+  padding-block: var(--section-y);
 }
 
-.skills_banners {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+.skills_inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(4rem, 8vh, 7rem);
 }
 
-.skills_banners_tec {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: clamp(2rem, 3vw, 3.7rem) 
-            clamp(4rem, 4.8vw, 6.5rem);
-    gap: 3.2rem;
-    border: 3.5px solid black;
-
-    opacity: 0;
-    transform: translateY(50%);
-    transition: 2s ease;
-    transition-delay: 0.1s;
+.skills .h2 {
+  text-align: center;
 }
 
-.skills_banners_tec.show {
-    opacity: 1;
-    transform: translateY(0);
+.skills_grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(1.6rem, 2.5vw, 2.8rem);
+  width: 100%;
 }
 
-.skills_banners_tec img {
-    width: clamp(4rem, 8vw, 8rem);
-    height: auto;
-    flex-shrink: 0;
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem;
+  padding: clamp(2.4rem, 3vw, 3.6rem) 1.6rem;
+  background-color: var(--bg);
+  border: 2px solid var(--line);
+  border-radius: var(--radius-sm);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
 }
 
+.skill:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+}
 
+/* Ícone em P&B por padrão; a cor original aparece só no hover */
+.skill img {
+  width: clamp(4.4rem, 6vw, 6.4rem);
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.82;
+  transition: filter 0.35s ease, opacity 0.35s ease, transform 0.35s var(--ease);
+}
 
-@media screen and (max-width: 1028px) { 
-    .skills {
-        height: auto;
-        gap: 10rem;
-        margin-bottom: 10rem;
-    }
-   
-    .skills_banners {
-        width: 100%;
-        gap: 2rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+.skill:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.06);
+}
 
-    .skills_banners_tec {
-        width: calc(50% - 1rem);
-        padding: 2rem 3rem;
-    }
-    
+.skill p {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
 
+/* Revelação escalonada dos cards */
+.js .skill:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.js .skill:nth-child(2) {
+  transition-delay: 0.12s;
+}
+.js .skill:nth-child(3) {
+  transition-delay: 0.19s;
+}
+.js .skill:nth-child(4) {
+  transition-delay: 0.26s;
+}
+.js .skill:nth-child(5) {
+  transition-delay: 0.33s;
+}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 992px) {
+  .skills_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .skills_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 380px) {
+  .skills_grid {
+    grid-template-columns: 1fr;
+  }
 }

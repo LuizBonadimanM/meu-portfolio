@@ -1,3 +1,8 @@
+/* =========================================================
+   BASE / DESIGN SYSTEM
+   Paleta 100% monocromática (apenas tons de cinza).
+   ========================================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 @import url('./header.css');
 @import url('./hero.css');
@@ -7,77 +12,250 @@
 @import url('./contact.css');
 @import url('./footer.css');
 
-
 :root {
-    --padding: 0 clamp(2rem, 6vw, 10rem);
-    --primary-neutral: #404040;
+  /* Cores (monocromático) */
+  --bg: #ffffff;
+  --surface: #f4f4f4;
+  --fg: #0d0d0d;
+  --fg-soft: #474747;
+  --fg-muted: #8c8c8c;
+  --border: #e6e6e6;
+  --line: #0d0d0d;
+  --fg-invert: #ffffff;
+
+  /* compatibilidade com o código antigo */
+  --primary-neutral: #474747;
+
+  /* Layout */
+  --container: 122rem;
+  --gutter: clamp(2rem, 6vw, 10rem);
+  --section-y: clamp(7rem, 12vh, 13rem);
+  --header-h: 8rem;
+
+  /* Formas */
+  --radius: 16px;
+  --radius-sm: 8px;
+
+  /* Movimento */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur: 0.8s;
 }
 
-@keyframes heroFade{
-    from{
-        opacity: 0;
-        transform: translateY(40px);
-    }
-
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-html, body {
-    overflow-x: hidden;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+  font-size: 62.5%; /* 1rem = 10px */
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
-*{
-    font-family: Sora,sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
+body {
+  font-family: 'Sora', system-ui, -apple-system, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--fg);
+  background-color: var(--bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-section {
-    scroll-margin-top: 10em;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.p1 {
-    font-size: 2rem;
-    line-height: 24px;
+ul,
+li {
+  list-style: none;
 }
 
-.p2 {
-    font-size: 1.6rem;
-    line-height: 20px;
-    
+img,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
-.p3 {
-    font-size: 1.2rem;
-    line-height: 20px;
-  
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+
+/* Acessibilidade de teclado */
+:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Centralizador de conteúdo */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Compensa o header fixo ao navegar por âncoras */
+main > section {
+  scroll-margin-top: var(--header-h);
+}
+
+/* =========================================================
+   TIPOGRAFIA
+   ========================================================= */
+
+h1 {
+  font-size: clamp(3.6rem, 6vw, 5.8rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
 }
 
 .h2 {
-    font-size: 4.4rem;
-    line-height: 40px;
-    font-weight: 300;
+  font-size: clamp(2.8rem, 5vw, 4.4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.spanh2 {
+  font-weight: 700;
 }
 
 h3 {
-    font-size: 3.2rem;
-    line-height: 32px;
+  font-size: clamp(2.2rem, 3.4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
-.spanh2{
-    font-weight: 600;
+.p1 {
+  font-size: clamp(1.7rem, 2vw, 2rem);
+  line-height: 1.5;
 }
 
+.p2 {
+  font-size: 1.6rem;
+  line-height: 1.7;
+}
 
-@media screen and (max-width: 1028px) {  }
+.p3 {
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+/* Trecho destacado no texto */
+.mark {
+  font-weight: 600;
+  color: var(--fg);
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 1px;
+}
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.4rem 2.6rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 2px solid var(--line);
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease),
+    transform 0.3s var(--ease);
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--solid {
+  background-color: var(--fg);
+  color: var(--fg-invert);
+}
+
+.btn--solid:hover {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: var(--fg);
+}
+
+.btn--ghost:hover {
+  background-color: var(--fg);
+  color: var(--fg-invert);
+}
+
+/* =========================================================
+   ANIMAÇÃO DE REVELAÇÃO NO SCROLL
+   Estados escondidos só existem quando o JS está ativo (.js),
+   assim a página continua legível mesmo sem JavaScript.
+   ========================================================= */
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+  will-change: opacity, transform;
+}
+
+.js .reveal.reveal--left {
+  transform: translateX(-4rem);
+}
+
+.js .reveal.reveal--right {
+  transform: translateX(4rem);
+}
+
+.js .reveal.show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* =========================================================
+   MOVIMENTO REDUZIDO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
