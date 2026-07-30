@@ -43,15 +43,25 @@
   width: clamp(4.4rem, 6vw, 6.4rem);
   aspect-ratio: 1 / 1;
   object-fit: contain;
-  filter: grayscale(100%);
+  filter: grayscale(1) brightness(1) invert(0);
   opacity: 0.82;
   transition: filter 0.35s ease, opacity 0.35s ease, transform 0.35s var(--ease);
 }
 
 .skill:hover img {
-  filter: grayscale(0);
+  filter: grayscale(0) brightness(1) invert(0);
   opacity: 1;
   transform: scale(1.06);
+}
+
+[data-theme='dark'] .skill img {
+  filter: grayscale(1) brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+[data-theme='dark'] .skill:hover img {
+  filter: grayscale(1) brightness(0) invert(1);
+  opacity: 1;
 }
 
 .skill p {
