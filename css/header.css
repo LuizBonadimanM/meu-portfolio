@@ -1,13 +1,9 @@
-/* =========================================================
-   HEADER + MENU MOBILE
-   ========================================================= */
-
 .header {
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 1000;
   height: var(--header-h);
-  background-color: rgba(255, 255, 255, 0.82);
+  background-color: var(--header-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
@@ -36,9 +32,13 @@
 .nav_logo_img {
   width: 6.4rem;
   height: auto;
+  transition: filter 0.3s ease;
 }
 
-/* Links de navegação */
+[data-theme='dark'] .nav_logo_img {
+  filter: brightness(0) invert(1);
+}
+
 .nav_menu {
   display: flex;
   align-items: center;
@@ -82,12 +82,48 @@
   font-weight: 600;
 }
 
+.nav_actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.icon_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 4rem;
+  min-width: 4rem;
+  padding: 0 1.1rem;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  color: var(--fg);
+  font-size: 1.5rem;
+  transition: border-color 0.25s ease, color 0.25s ease,
+    background-color 0.25s ease, transform 0.25s var(--ease);
+}
+
+.icon_btn:hover {
+  border-color: var(--line);
+  transform: translateY(-2px);
+}
+
+.icon_btn:active {
+  transform: translateY(0);
+}
+
+.lang_code {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
 .nav_cv {
   font-size: 1.4rem;
   padding: 1.1rem 2.2rem;
 }
 
-/* Ícone hambúrguer (CSS puro, sem imagens) */
 .nav_burger {
   display: none;
   width: 4.4rem;
@@ -119,7 +155,6 @@
   transform: translateY(-0.8rem) rotate(-45deg);
 }
 
-/* Painel mobile */
 .mobile_menu {
   position: fixed;
   top: var(--header-h);
@@ -167,13 +202,9 @@
   margin-top: 2rem;
 }
 
-/* =========================================================
-   RESPONSIVO
-   ========================================================= */
-
 @media (max-width: 992px) {
   .nav_menu,
-  .nav_cv {
+  .nav .nav_cv {
     display: none;
   }
 

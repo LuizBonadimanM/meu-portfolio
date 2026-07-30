@@ -1,10 +1,7 @@
-/* =========================================================
-   PROJETOS
-   ========================================================= */
-
 .projects {
   padding-block: var(--section-y);
   background-color: var(--surface);
+  transition: background-color 0.3s ease;
 }
 
 .projects_inner {
@@ -25,7 +22,6 @@
   gap: clamp(3rem, 6vw, 7rem);
 }
 
-/* Inverte a ordem no segundo projeto (imagem à direita) */
 .project--reverse .project_media {
   order: 2;
 }
@@ -61,7 +57,6 @@
   max-width: 52rem;
 }
 
-/* Link "Veja mais" */
 .link_more {
   display: inline-flex;
   align-items: center;
@@ -86,17 +81,12 @@
   filter: grayscale(100%);
 }
 
-/* =========================================================
-   RESPONSIVO
-   ========================================================= */
-
 @media (max-width: 900px) {
   .project {
     grid-template-columns: 1fr;
     gap: 2.6rem;
   }
 
-  /* imagem sempre no topo no mobile */
   .project_media,
   .project--reverse .project_media {
     order: -1;

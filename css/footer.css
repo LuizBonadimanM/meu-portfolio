@@ -1,11 +1,8 @@
-/* =========================================================
-   RODAPÉ
-   ========================================================= */
-
 .footer {
-  background-color: var(--fg);
-  color: var(--fg-invert);
+  background-color: var(--footer-bg);
+  color: var(--footer-fg);
   padding-block: 3rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .footer_inner {
@@ -22,7 +19,7 @@
 }
 
 .footer_info .p3 {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--footer-muted);
 }
 
 .footer_copyright {
@@ -30,12 +27,8 @@
 }
 
 .footer_copyright .p3 {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--footer-muted);
 }
-
-/* =========================================================
-   RESPONSIVO
-   ========================================================= */
 
 @media (max-width: 680px) {
   .footer_inner {

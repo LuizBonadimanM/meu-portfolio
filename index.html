@@ -3,11 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfólio de Luiz Bonadiman — Desenvolvedor Front-End focado em interfaces modernas, responsivas e limpas."/>
-    <script>document.documentElement.classList.add('js')</script>
+    <meta
+      name="description"
+      content="Portfólio de Luiz Bonadiman — Desenvolvedor Front-End focado em interfaces modernas, responsivas e limpas."
+    />
+
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.classList.add('js');
+        try {
+          var t = localStorage.getItem('theme');
+          if (!t) {
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+          }
+          d.setAttribute('data-theme', t);
+          var l = localStorage.getItem('lang');
+          d.setAttribute('lang', l === 'en' ? 'en' : 'pt-br');
+        } catch (e) {}
+      })();
+    </script>
+
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <title>Luiz Bonadiman — Desenvolvedor Front-End</title>
     <link rel="icon" href="img/Logo-img-title.png" />
   </head>
@@ -15,37 +46,71 @@
   <body>
     <header class="header" id="top">
       <nav class="nav container">
-        <a href="#home" class="nav_logo" aria-label="Ir para o início">
-          <img class="nav_logo_img" src="img/Logo-img.png" alt="Logo Luiz Bonadiman"
+        <a href="#home" class="nav_logo" data-i18n-aria="aria.logo" aria-label="Ir para o início">
+          <img
+            class="nav_logo_img"
+            src="img/Logo-img.png"
+            alt="Logo Luiz Bonadiman"
           />
         </a>
 
         <ul class="nav_menu">
-          <li><a href="#about" class="nav_link">Sobre mim</a></li>
-          <li><a href="#tec" class="nav_link">Tecnologias</a></li>
-          <li><a href="#projects" class="nav_link">Projetos</a></li>
-          <li><a href="#contato" class="nav_link">Contato</a></li>
+          <li><a href="#about" class="nav_link" data-i18n="nav.about">Sobre mim</a></li>
+          <li><a href="#tec" class="nav_link" data-i18n="nav.tec">Tecnologias</a></li>
+          <li><a href="#projects" class="nav_link" data-i18n="nav.projects">Projetos</a></li>
+          <li><a href="#contato" class="nav_link" data-i18n="nav.contact">Contato</a></li>
         </ul>
 
-        <a href="#" class="btn btn--solid nav_cv">
-          Currículo <i class="fa-solid fa-download"></i>
-        </a>
+        <div class="nav_actions">
+          <button
+            type="button"
+            class="icon_btn"
+            id="themeToggle"
+            data-i18n-aria="aria.theme"
+            aria-label="Alternar tema"
+          >
+            <i class="fa-solid fa-moon"></i>
+          </button>
 
-        <button type="button" class="nav_burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-          <span></span><span></span><span></span>
-        </button>
+          <button
+            type="button"
+            class="icon_btn"
+            id="langToggle"
+            data-i18n-aria="aria.lang"
+            aria-label="Mudar idioma"
+          >
+            <i class="fa-solid fa-globe"></i><span class="lang_code">PT</span>
+          </button>
+
+          <a href="#" class="btn btn--solid nav_cv">
+            <span data-i18n="nav.cv">Currículo</span>
+            <i class="fa-solid fa-download"></i>
+          </a>
+
+          <button
+            type="button"
+            class="nav_burger"
+            id="burger"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </nav>
 
       <div class="mobile_menu" id="mobileMenu">
         <ul class="mobile_menu_nav">
-          <li><a href="#about" class="mobile_link">Sobre mim</a></li>
-          <li><a href="#tec" class="mobile_link">Tecnologias</a></li>
-          <li><a href="#projects" class="mobile_link">Projetos</a></li>
-          <li><a href="#contato" class="mobile_link">Contato</a></li>
+          <li><a href="#about" class="mobile_link" data-i18n="nav.about">Sobre mim</a></li>
+          <li><a href="#tec" class="mobile_link" data-i18n="nav.tec">Tecnologias</a></li>
+          <li><a href="#projects" class="mobile_link" data-i18n="nav.projects">Projetos</a></li>
+          <li><a href="#contato" class="mobile_link" data-i18n="nav.contact">Contato</a></li>
         </ul>
 
         <a href="#" class="btn btn--solid mobile_menu_cv">
-          Currículo <i class="fa-solid fa-download"></i>
+          <span data-i18n="nav.cv">Currículo</span>
+          <i class="fa-solid fa-download"></i>
         </a>
       </div>
     </header>
@@ -54,18 +119,21 @@
       <section class="hero" id="home">
         <div class="container hero_inner">
           <div class="hero_banner">
-            <p class="hero_eyebrow reveal">Olá, eu sou</p>
+            <p class="hero_eyebrow reveal" data-i18n="hero.eyebrow">Olá, eu sou</p>
             <h1 class="reveal">Luiz Bonadiman</h1>
-            <p class="hero_lead reveal">
-              <span class="mark">Desenvolvedor Front-End</span> focado em criar interfaces modernas, responsivas e intuitivas.
+            <p class="hero_lead reveal" data-i18n="hero.lead">
+              <span class="mark">Desenvolvedor Front-End</span> focado em criar
+              interfaces modernas, responsivas e intuitivas.
             </p>
-            <p class="hero_text reveal">
+            <p class="hero_text reveal" data-i18n="hero.text">
               Atualmente estudando e aprimorando minhas habilidades com
-              <span class="mark">HTML, CSS e JavaScript</span>, buscando sempre desenvolver experiências limpas, funcionais e agradáveis para o usuário.
+              <span class="mark">HTML, CSS e JavaScript</span>, buscando sempre
+              desenvolver experiências limpas, funcionais e agradáveis para o
+              usuário.
             </p>
             <div class="hero_actions reveal">
-              <a href="#projects" class="btn btn--solid">Ver projetos</a>
-              <a href="#contato" class="btn btn--ghost">Entrar em contato</a>
+              <a href="#projects" class="btn btn--solid" data-i18n="hero.cta1">Ver projetos</a>
+              <a href="#contato" class="btn btn--ghost" data-i18n="hero.cta2">Entrar em contato</a>
             </div>
           </div>
 
@@ -74,11 +142,10 @@
           </div>
         </div>
 
-        <a href="#about" class="hero_scroll" aria-label="Rolar para baixo">
+        <a href="#about" class="hero_scroll" data-i18n-aria="aria.scroll" aria-label="Rolar para baixo">
           <span></span>
         </a>
       </section>
-
 
       <section class="about" id="about">
         <div class="container about_inner">
@@ -87,25 +154,25 @@
           </div>
 
           <div class="about_banner">
-            <h2 class="h2 reveal">Sobre <span class="spanh2">Mim</span></h2>
-            <p class="p2 reveal">
+            <h2 class="h2 reveal" data-i18n="about.title">Sobre <span class="spanh2">Mim</span></h2>
+            <p class="p2 reveal" data-i18n="about.p1">
               Sou estudante e desenvolvedor em formação, apaixonado por
               tecnologia e pela criação de soluções digitais. Tenho dedicado meu
               tempo ao aprendizado de desenvolvimento web, buscando aprimorar
               constantemente minhas habilidades técnicas e práticas.
             </p>
-            <p class="p2 reveal">
+            <p class="p2 reveal" data-i18n="about.p2">
               Atualmente estudo HTML, CSS, JavaScript e conceitos de
               desenvolvimento de software, criando projetos próprios para
               colocar em prática os conhecimentos adquiridos e desenvolver
               experiências modernas e funcionais para os usuários.
             </p>
-            <p class="p2 reveal">
+            <p class="p2 reveal" data-i18n="about.p3">
               Valorizo a organização, a atenção aos detalhes e o aprendizado
               contínuo. Acredito que cada projeto é uma oportunidade de evoluir
               tecnicamente e entregar resultados cada vez melhores.
             </p>
-            <p class="p2 reveal">
+            <p class="p2 reveal" data-i18n="about.p4">
               Meu objetivo é construir uma carreira sólida na área de
               tecnologia, participando de projetos desafiadores e contribuindo
               com soluções criativas e eficientes para empresas e pessoas.
@@ -114,10 +181,9 @@
         </div>
       </section>
 
-    
       <section class="skills" id="tec">
         <div class="container skills_inner">
-          <h2 class="h2 reveal">
+          <h2 class="h2 reveal" data-i18n="skills.title">
             Minhas <span class="spanh2">Tecnologias</span>
           </h2>
 
@@ -146,10 +212,9 @@
         </div>
       </section>
 
-      
       <section class="projects" id="projects">
         <div class="container projects_inner">
-          <h2 class="h2 reveal">Meus <span class="spanh2">Projetos</span></h2>
+          <h2 class="h2 reveal" data-i18n="projects.title">Meus <span class="spanh2">Projetos</span></h2>
 
           <article class="project">
             <div class="project_media reveal reveal--left">
@@ -157,7 +222,7 @@
             </div>
             <div class="project_content reveal reveal--right">
               <h3>Tohatsu Motores</h3>
-              <p class="p2">
+              <p class="p2" data-i18n="projects.desc">
                 Site institucional desenvolvido para apresentar a marca, seus
                 produtos e soluções de forma clara e organizada. O projeto conta
                 com catálogo de produtos, área de contato, informações
@@ -171,19 +236,23 @@
                 target="_blank"
                 rel="noopener"
               >
-                <span>Veja mais</span>
-                <img src="img/external-link-48.svg" class="link_more_icon" alt=""/>
+                <span data-i18n="projects.more">Veja mais</span>
+                <img
+                  src="img/external-link-48.svg"
+                  class="link_more_icon"
+                  alt=""
+                />
               </a>
             </div>
           </article>
 
           <article class="project project--reverse">
             <div class="project_media reveal reveal--right">
-              <img src="img/kamell-offgrid.png" alt="Projeto Kamell Off-Grid"/>
+              <img src="img/kamell-offgrid.png" alt="Projeto Kamell Off-Grid" />
             </div>
             <div class="project_content reveal reveal--left">
               <h3>Kamell Off-Grid</h3>
-              <p class="p2">
+              <p class="p2" data-i18n="projects.desc">
                 Site institucional desenvolvido para apresentar a marca, seus
                 produtos e soluções de forma clara e organizada. O projeto conta
                 com catálogo de produtos, área de contato, informações
@@ -191,26 +260,34 @@
                 próximos, proporcionando uma navegação intuitiva e uma
                 experiência responsiva em diferentes dispositivos.
               </p>
-              <a href="https://tohatsu.kamell.com.br/index.html" class="link_more" target="_blank" rel="noopener">
-                <span>Veja mais</span>
-                <img src="img/external-link-48.svg" class="link_more_icon" alt=""/>
+              <a
+                href="https://tohatsu.kamell.com.br/index.html"
+                class="link_more"
+                target="_blank"
+                rel="noopener"
+              >
+                <span data-i18n="projects.more">Veja mais</span>
+                <img
+                  src="img/external-link-48.svg"
+                  class="link_more_icon"
+                  alt=""
+                />
               </a>
             </div>
           </article>
         </div>
       </section>
 
-
       <section class="contact" id="contato">
         <div class="container contact_inner">
           <div class="contact_intro reveal reveal--left">
-            <h2 class="h2">Vamos <span class="spanh2">conversar!</span></h2>
-            <p class="p2">
+            <h2 class="h2" data-i18n="contact.title">Vamos <span class="spanh2">conversar!</span></h2>
+            <p class="p2" data-i18n="contact.p1">
               Estou construindo minha trajetória como
               <span class="mark">Desenvolvedor Front-End</span> e sempre aberto
               a novas oportunidades, projetos e conexões na área de tecnologia.
             </p>
-            <p class="p2">
+            <p class="p2" data-i18n="contact.p2">
               Se você tem uma ideia, uma proposta ou simplesmente deseja trocar
               experiências, ficarei feliz em receber sua mensagem.
             </p>
@@ -219,25 +296,25 @@
           <form method="post" class="contact_form reveal reveal--right" id="contact-form">
             <div class="field">
               <input type="text" name="user_name" id="name" placeholder=" " required />
-              <label for="name">Seu nome</label>
+              <label for="name" data-i18n="contact.name">Seu nome</label>
             </div>
 
             <div class="field">
               <input type="email" name="user_email" id="email" placeholder=" " required />
-              <label for="email">Email</label>
+              <label for="email" data-i18n="contact.email">Email</label>
             </div>
 
             <div class="field">
               <input type="text" name="subject" id="subject" placeholder=" " />
-              <label for="subject">Assunto</label>
+              <label for="subject" data-i18n="contact.subject">Assunto</label>
             </div>
 
             <div class="field field--area">
               <textarea name="message" id="message" placeholder=" " required></textarea>
-              <label for="message">Como posso te ajudar?</label>
+              <label for="message" data-i18n="contact.message">Como posso te ajudar?</label>
             </div>
 
-            <button type="submit" class="btn btn--solid">Enviar mensagem</button>
+            <button type="submit" class="btn btn--solid" data-i18n="contact.send">Enviar mensagem</button>
           </form>
         </div>
       </section>
@@ -247,12 +324,12 @@
       <div class="container footer_inner">
         <div class="footer_info">
           <p class="footer_name">Luiz Bonadiman</p>
-          <p class="p3">Desenvolvedor Front-End</p>
+          <p class="p3" data-i18n="footer.role">Desenvolvedor Front-End</p>
         </div>
 
         <div class="footer_copyright">
           <p class="p3">© 2026 Luiz Bonadiman.</p>
-          <p class="p3">Todos os direitos reservados.</p>
+          <p class="p3" data-i18n="footer.rights">Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

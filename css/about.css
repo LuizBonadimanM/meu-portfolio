@@ -1,10 +1,7 @@
-/* =========================================================
-   SOBRE MIM
-   ========================================================= */
-
 .about {
   padding-block: var(--section-y);
   background-color: var(--surface);
+  transition: background-color 0.3s ease;
 }
 
 .about_inner {
@@ -44,10 +41,6 @@
   color: var(--fg-soft);
   line-height: 1.75;
 }
-
-/* =========================================================
-   RESPONSIVO
-   ========================================================= */
 
 @media (max-width: 992px) {
   .about_inner {

@@ -1,8 +1,3 @@
-/* =========================================================
-   BASE / DESIGN SYSTEM
-   Paleta 100% monocromática (apenas tons de cinza).
-   ========================================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 @import url('./header.css');
 @import url('./hero.css');
@@ -13,7 +8,6 @@
 @import url('./footer.css');
 
 :root {
-  /* Cores (monocromático) */
   --bg: #ffffff;
   --surface: #f4f4f4;
   --fg: #0d0d0d;
@@ -22,23 +16,35 @@
   --border: #e6e6e6;
   --line: #0d0d0d;
   --fg-invert: #ffffff;
-
-  /* compatibilidade com o código antigo */
   --primary-neutral: #474747;
-
-  /* Layout */
+  --header-bg: rgba(255, 255, 255, 0.82);
+  --footer-bg: #0d0d0d;
+  --footer-fg: #ffffff;
+  --footer-muted: rgba(255, 255, 255, 0.65);
   --container: 122rem;
   --gutter: clamp(2rem, 6vw, 10rem);
   --section-y: clamp(7rem, 12vh, 13rem);
   --header-h: 8rem;
-
-  /* Formas */
   --radius: 16px;
   --radius-sm: 8px;
-
-  /* Movimento */
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --dur: 0.8s;
+}
+
+[data-theme='dark'] {
+  --bg: #0d0d0d;
+  --surface: #171717;
+  --fg: #f4f4f4;
+  --fg-soft: #c4c4c4;
+  --fg-muted: #8f8f8f;
+  --border: #2b2b2b;
+  --line: #f4f4f4;
+  --fg-invert: #0d0d0d;
+  --primary-neutral: #c4c4c4;
+  --header-bg: rgba(13, 13, 13, 0.82);
+  --footer-bg: #000000;
+  --footer-fg: #f4f4f4;
+  --footer-muted: rgba(255, 255, 255, 0.6);
 }
 
 *,
@@ -50,7 +56,7 @@
 }
 
 html {
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 62.5%;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
@@ -64,6 +70,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -95,14 +102,12 @@ textarea {
   font-family: inherit;
 }
 
-/* Acessibilidade de teclado */
 :focus-visible {
   outline: 2px solid var(--fg);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
-/* Centralizador de conteúdo */
 .container {
   width: 100%;
   max-width: var(--container);
@@ -110,14 +115,9 @@ textarea {
   padding-inline: var(--gutter);
 }
 
-/* Compensa o header fixo ao navegar por âncoras */
 main > section {
   scroll-margin-top: var(--header-h);
 }
-
-/* =========================================================
-   TIPOGRAFIA
-   ========================================================= */
 
 h1 {
   font-size: clamp(3.6rem, 6vw, 5.8rem);
@@ -159,17 +159,12 @@ h3 {
   line-height: 1.6;
 }
 
-/* Trecho destacado no texto */
 .mark {
   font-weight: 600;
   color: var(--fg);
   border-bottom: 2px solid var(--line);
   padding-bottom: 1px;
 }
-
-/* =========================================================
-   BOTÕES
-   ========================================================= */
 
 .btn {
   display: inline-flex;
@@ -182,7 +177,7 @@ h3 {
   border-radius: 999px;
   border: 2px solid var(--line);
   transition: background-color 0.3s var(--ease), color 0.3s var(--ease),
-    transform 0.3s var(--ease);
+    transform 0.3s var(--ease), border-color 0.3s var(--ease);
   white-space: nowrap;
 }
 
@@ -214,12 +209,6 @@ h3 {
   color: var(--fg-invert);
 }
 
-/* =========================================================
-   ANIMAÇÃO DE REVELAÇÃO NO SCROLL
-   Estados escondidos só existem quando o JS está ativo (.js),
-   assim a página continua legível mesmo sem JavaScript.
-   ========================================================= */
-
 .js .reveal {
   opacity: 0;
   transform: translateY(3rem);
@@ -239,10 +228,6 @@ h3 {
   opacity: 1;
   transform: translate(0, 0);
 }
-
-/* =========================================================
-   MOVIMENTO REDUZIDO
-   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   *,
