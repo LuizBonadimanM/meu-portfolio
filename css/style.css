@@ -244,3 +244,28 @@ h3 {
     transform: none;
   }
 }
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.social_link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.4rem;
+  height: 4.4rem;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  color: inherit;
+  font-size: 1.9rem;
+  transition: transform 0.25s var(--ease), border-color 0.25s ease,
+    color 0.25s ease, background-color 0.25s ease;
+}
+
+.social_link:hover {
+  transform: translateY(-3px);
+  border-color: currentColor;
+}

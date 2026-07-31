@@ -11,17 +11,17 @@
     <script>
       (function () {
         var d = document.documentElement;
-        d.classList.add('js');
+        d.classList.add("js");
         try {
-          var t = localStorage.getItem('theme');
+          var t = localStorage.getItem("theme");
           if (!t) {
-            t = window.matchMedia('(prefers-color-scheme: dark)').matches
-              ? 'dark'
-              : 'light';
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
           }
-          d.setAttribute('data-theme', t);
-          var l = localStorage.getItem('lang');
-          d.setAttribute('lang', l === 'en' ? 'en' : 'pt-br');
+          d.setAttribute("data-theme", t);
+          var l = localStorage.getItem("lang");
+          d.setAttribute("lang", l === "en" ? "en" : "pt-br");
         } catch (e) {}
       })();
     </script>
@@ -46,7 +46,12 @@
   <body>
     <header class="header" id="top">
       <nav class="nav container">
-        <a href="#home" class="nav_logo" data-i18n-aria="aria.logo" aria-label="Ir para o início">
+        <a
+          href="#home"
+          class="nav_logo"
+          data-i18n-aria="aria.logo"
+          aria-label="Ir para o início"
+        >
           <img
             class="nav_logo_img"
             src="img/Logo-img.png"
@@ -55,10 +60,24 @@
         </a>
 
         <ul class="nav_menu">
-          <li><a href="#about" class="nav_link" data-i18n="nav.about">Sobre mim</a></li>
-          <li><a href="#tec" class="nav_link" data-i18n="nav.tec">Tecnologias</a></li>
-          <li><a href="#projects" class="nav_link" data-i18n="nav.projects">Projetos</a></li>
-          <li><a href="#contato" class="nav_link" data-i18n="nav.contact">Contato</a></li>
+          <li>
+            <a href="#about" class="nav_link" data-i18n="nav.about"
+              >Sobre mim</a
+            >
+          </li>
+          <li>
+            <a href="#tec" class="nav_link" data-i18n="nav.tec">Tecnologias</a>
+          </li>
+          <li>
+            <a href="#projects" class="nav_link" data-i18n="nav.projects"
+              >Projetos</a
+            >
+          </li>
+          <li>
+            <a href="#contato" class="nav_link" data-i18n="nav.contact"
+              >Contato</a
+            >
+          </li>
         </ul>
 
         <div class="nav_actions">
@@ -102,10 +121,26 @@
 
       <div class="mobile_menu" id="mobileMenu">
         <ul class="mobile_menu_nav">
-          <li><a href="#about" class="mobile_link" data-i18n="nav.about">Sobre mim</a></li>
-          <li><a href="#tec" class="mobile_link" data-i18n="nav.tec">Tecnologias</a></li>
-          <li><a href="#projects" class="mobile_link" data-i18n="nav.projects">Projetos</a></li>
-          <li><a href="#contato" class="mobile_link" data-i18n="nav.contact">Contato</a></li>
+          <li>
+            <a href="#about" class="mobile_link" data-i18n="nav.about"
+              >Sobre mim</a
+            >
+          </li>
+          <li>
+            <a href="#tec" class="mobile_link" data-i18n="nav.tec"
+              >Tecnologias</a
+            >
+          </li>
+          <li>
+            <a href="#projects" class="mobile_link" data-i18n="nav.projects"
+              >Projetos</a
+            >
+          </li>
+          <li>
+            <a href="#contato" class="mobile_link" data-i18n="nav.contact"
+              >Contato</a
+            >
+          </li>
         </ul>
 
         <a href="#" class="btn btn--solid mobile_menu_cv">
@@ -119,7 +154,9 @@
       <section class="hero" id="home">
         <div class="container hero_inner">
           <div class="hero_banner">
-            <p class="hero_eyebrow reveal" data-i18n="hero.eyebrow">Olá, eu sou</p>
+            <p class="hero_eyebrow reveal" data-i18n="hero.eyebrow">
+              Olá, eu sou
+            </p>
             <h1 class="reveal">Luiz Bonadiman</h1>
             <p class="hero_lead reveal" data-i18n="hero.lead">
               <span class="mark">Desenvolvedor Front-End</span> focado em criar
@@ -132,8 +169,12 @@
               usuário.
             </p>
             <div class="hero_actions reveal">
-              <a href="#projects" class="btn btn--solid" data-i18n="hero.cta1">Ver projetos</a>
-              <a href="#contato" class="btn btn--ghost" data-i18n="hero.cta2">Entrar em contato</a>
+              <a href="#projects" class="btn btn--solid" data-i18n="hero.cta1"
+                >Ver projetos</a
+              >
+              <a href="#contato" class="btn btn--ghost" data-i18n="hero.cta2"
+                >Entrar em contato</a
+              >
             </div>
           </div>
 
@@ -141,10 +182,6 @@
             <img class="hero_img" src="img/user-img.png" alt="Luiz Bonadiman" />
           </div>
         </div>
-
-        <a href="#about" class="hero_scroll" data-i18n-aria="aria.scroll" aria-label="Rolar para baixo">
-          <span></span>
-        </a>
       </section>
 
       <section class="about" id="about">
@@ -154,7 +191,9 @@
           </div>
 
           <div class="about_banner">
-            <h2 class="h2 reveal" data-i18n="about.title">Sobre <span class="spanh2">Mim</span></h2>
+            <h2 class="h2 reveal" data-i18n="about.title">
+              Sobre <span class="spanh2">Mim</span>
+            </h2>
             <p class="p2 reveal" data-i18n="about.p1">
               Sou estudante e desenvolvedor em formação, apaixonado por
               tecnologia e pela criação de soluções digitais. Tenho dedicado meu
@@ -214,7 +253,9 @@
 
       <section class="projects" id="projects">
         <div class="container projects_inner">
-          <h2 class="h2 reveal" data-i18n="projects.title">Meus <span class="spanh2">Projetos</span></h2>
+          <h2 class="h2 reveal" data-i18n="projects.title">
+            Meus <span class="spanh2">Projetos</span>
+          </h2>
 
           <article class="project">
             <div class="project_media reveal reveal--left">
@@ -261,7 +302,7 @@
                 experiência responsiva em diferentes dispositivos.
               </p>
               <a
-                href="https://tohatsu.kamell.com.br/index.html"
+                href="https://offgrid.kamell.com.br/"
                 class="link_more"
                 target="_blank"
                 rel="noopener"
@@ -281,7 +322,9 @@
       <section class="contact" id="contato">
         <div class="container contact_inner">
           <div class="contact_intro reveal reveal--left">
-            <h2 class="h2" data-i18n="contact.title">Vamos <span class="spanh2">conversar!</span></h2>
+            <h2 class="h2" data-i18n="contact.title">
+              Vamos <span class="spanh2">conversar!</span>
+            </h2>
             <p class="p2" data-i18n="contact.p1">
               Estou construindo minha trajetória como
               <span class="mark">Desenvolvedor Front-End</span> e sempre aberto
@@ -293,14 +336,30 @@
             </p>
           </div>
 
-          <form method="post" class="contact_form reveal reveal--right" id="contact-form">
+          <form
+            method="post"
+            class="contact_form reveal reveal--right"
+            id="contact-form"
+          >
             <div class="field">
-              <input type="text" name="user_name" id="name" placeholder=" " required />
+              <input
+                type="text"
+                name="user_name"
+                id="name"
+                placeholder=" "
+                required
+              />
               <label for="name" data-i18n="contact.name">Seu nome</label>
             </div>
 
             <div class="field">
-              <input type="email" name="user_email" id="email" placeholder=" " required />
+              <input
+                type="email"
+                name="user_email"
+                id="email"
+                placeholder=" "
+                required
+              />
               <label for="email" data-i18n="contact.email">Email</label>
             </div>
 
@@ -310,11 +369,24 @@
             </div>
 
             <div class="field field--area">
-              <textarea name="message" id="message" placeholder=" " required></textarea>
-              <label for="message" data-i18n="contact.message">Como posso te ajudar?</label>
+              <textarea
+                name="message"
+                id="message"
+                placeholder=" "
+                required
+              ></textarea>
+              <label for="message" data-i18n="contact.message"
+                >Como posso te ajudar?</label
+              >
             </div>
 
-            <button type="submit" class="btn btn--solid" data-i18n="contact.send">Enviar mensagem</button>
+            <button
+              type="submit"
+              class="btn btn--solid"
+              data-i18n="contact.send"
+            >
+              Enviar mensagem
+            </button>
           </form>
         </div>
       </section>
@@ -327,9 +399,30 @@
           <p class="p3" data-i18n="footer.role">Desenvolvedor Front-End</p>
         </div>
 
+        <div class="social">
+          <a
+            href="https://github.com/LuizBonadimanM"
+            class="social_link"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/luizbonadiman"
+            class="social_link"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </div>
+
         <div class="footer_copyright">
           <p class="p3">© 2026 Luiz Bonadiman.</p>
-          <p class="p3" data-i18n="footer.rights">Todos os direitos reservados.</p>
+          <p class="p3" data-i18n="footer.rights">
+            Todos os direitos reservados.
+          </p>
         </div>
       </div>
     </footer>
