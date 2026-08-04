@@ -61,7 +61,6 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
-  filter: grayscale(100%) contrast(1.02);
   border: 1px solid var(--border);
 }
 
